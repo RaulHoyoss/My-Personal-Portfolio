@@ -92,7 +92,7 @@ export default function Projects() {
           <div className="relative flex items-center justify-center mt-6 gap-4">
             {/* Imagen anterior */}
             <div
-              className="w-20 h-40 overflow-hidden opacity-40 blur-sm cursor-pointer
+              className="w-16 h-24 md:w-20 md:h-40 lg:w-20 lg:h-40 overflow-hidden opacity-40 blur-sm cursor-pointer
                         transform transition-transform duration-300 ease-out hover:scale-105  "
               onClick={prev}
             >
@@ -141,7 +141,7 @@ export default function Projects() {
 
             {/* Imagen siguiente */}
             <div
-              className="w-20 h-40 overflow-hidden opacity-40 blur-sm cursor-pointer
+              className="w-16 h-24 md:w-20 md:h-40 lg:w-20 lg:h-40 overflow-hidden opacity-40 blur-sm cursor-pointer
                         transform transition-transform duration-300 ease-out hover:scale-105  "
               onClick={next}
             >
@@ -158,9 +158,9 @@ export default function Projects() {
           </div>
 
           {/* Descripción */}
-          <div className=" font-main relative  text-justify mt-6 px-6 py-4 min-h-[100px] ">
+          <div className=" font-main relative  text-justify mt-6  px:2 md:px-6 lg:px-6 py-4 min-h-[100px] ">
             <p
-              className={`text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 rounded-lg py-3 px-3 transition-all duration-500 ease-in-out ${
+              className={`text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 rounded-lg py-3 px-3  transition-all duration-500 ease-in-out ${
                 isAnimating
                   ? "opacity-0 translate-y-2"
                   : "opacity-100 translate-y-0"
