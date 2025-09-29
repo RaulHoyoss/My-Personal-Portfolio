@@ -27,7 +27,7 @@ function Bulit() {
   return (
     <section className='bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark pt-28 pb-4   '>
         <a
-        href='https://github.com/RaulHoyoss/desktop-tutorial'
+        href='https://github.com/RaulHoyoss/My-Personal-Portfolio'
         target='_blank'
         rel='noopener noreferrer'
         className='font-main hover:text-primary-light dark:hover:text-primary-dark cursor-pointer '>
