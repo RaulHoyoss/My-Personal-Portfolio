@@ -10,7 +10,7 @@ function About() {
     <section
       id="About"
       className="   bg-bg-light text-text-light dark:bg-bg-dark dark:text-text-dark 
-                 flex flex-col justify-start items-start px-12 md:px-40 pt-16 md:pt-20 lg:pt-24"
+                 flex flex-col justify-start items-center lg:items-start px-12 md:px-40 pt-16 md:pt-20 lg:pt-24"
     >
       <div className="max-w-5xl mx-auto">
 

@@ -13,9 +13,9 @@ function Hero() {
     <section className="font-heading bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark min-h-screen flex flex-col justify-center items-start px-8 md:px-40 lg:px-48 pt-24 lg:pt-32">
       <div className="max-w-4xl mx-auto">
         {/* Saludo y nombre */}
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-light leading-snug">
+        <h1 className="text-2xl md:text-2xl lg:text-2xl font-light leading-snug">
          {t('hero.hello')} 
-          <span className="block mt-4 text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary-light dark:text-primary-dark">
+          <span className="block mt-4 text-5xl md:text-4xl lg:text-5xl font-extrabold text-primary-light dark:text-primary-dark">
             Raúl Hoyos.
           </span>
         </h1>
