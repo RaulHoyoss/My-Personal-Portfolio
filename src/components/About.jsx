@@ -9,23 +9,28 @@ function About() {
   return (
     <section
       id="About"
-      className="   bg-bg-light text-text-light dark:bg-bg-dark dark:text-text-dark 
-                 flex flex-col justify-start items-center lg:items-start px-12 md:px-40 pt-16 md:pt-20 lg:pt-24"
+      className="bg-bg-light text-text-light dark:bg-bg-dark dark:text-text-dark 
+                 flex flex-col justify-start items-center lg:items-start 
+                 px-6 md:px-40 pt-16 md:pt-20 lg:pt-24 overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
 
         {/* Título */}
         <div className="flex items-center w-full mb-8">
-          <span className="text-primary-light dark:text-primary-dark font-mono mr-4"><FaUser size={24}></FaUser></span>
-          <h1 className=" font-NavBar font-bold text-3xl md:text-4xl  mr-6">{t('about.Titulo1')}</h1>
+          <span className="text-primary-light dark:text-primary-dark font-mono mr-4">
+            <FaUser size={24} />
+          </span>
+          <h1 className="font-NavBar font-bold text-3xl md:text-4xl mr-6">
+            {t('about.Titulo1')}
+          </h1>
           <div className="flex-1 h-px bg-gray-300 dark:bg-gray-700"></div>
         </div>
 
         {/* Contenedor de texto + imagen */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-20 w-full text-justify">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-20 w-full">
 
           {/* Texto */}
-          <div className=" font-main space-y-6 max-w-full lg:max-w-2xl lg:text-justify text-lg">
+          <div className="font-main space-y-6 max-w-full lg:max-w-2xl text-lg text-left text-justify break-words">
             <p>
               {t('about.p1.greeting')}{" "}
               <span className="text-primary-light dark:text-primary-dark">{t('about.p1.name')}</span>{" "}
@@ -63,7 +68,7 @@ function About() {
               <img
                 src="/Face_image.jpg"
                 alt="Foto de Raul Hoyos"
-                className=" relative w-full h-full object-cover rounded-lg shadow-lg
+                className="relative w-full h-full object-cover rounded-lg shadow-lg
                            transform transition-transform duration-300 ease-out 
                            group-hover:translate-x-1 group-hover:translate-y-1"
               />

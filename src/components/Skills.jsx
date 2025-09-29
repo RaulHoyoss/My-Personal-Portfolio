@@ -1,17 +1,53 @@
-import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+
+// Definir fuera del componente para evitar warnings
+const skills = {
+  languages: ["Java", "C#", "Kotlin", "JavaScript (Node.js)"],
+  frontend: ["HTML", "Vue.js", "React", "Tailwind CSS"],
+  backend: ["Spring", "Node.js", "SQL"],
+  otros: ["MVC", "Git"],
+};
 
 function Skills() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+  const [activeCategory, setActiveCategory] = useState("languages");
+  const listRef = useRef(null);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
 
-  const skills = {
-    languages: ["Java", "C#", "Kotlin", "JavaScript (Node.js)"],
-    frontend: ["HTML", "Vue.js", "React", "Tailwind CSS"],
-    backend: ["Spring", "Node.js", "SQL"],
-    otros: ["MVC", "Git"],
-  }
+  // Indicador dinámico
+  useEffect(() => {
+    const updateIndicator = () => {
+      const listItems = listRef.current?.children;
+      if (!listItems) return;
 
-  const [activeCategory, setActiveCategory] = useState("languages")
+      const index = Object.keys(skills).indexOf(activeCategory);
+      const li = listItems[index];
+      if (!li) return;
+
+      if (window.innerWidth < 768) {
+        // Horizontal en móvil
+        setIndicatorStyle({
+          width: li.offsetWidth - 16 + "px", // un poco más corta
+          height: "2px",
+          left: li.offsetLeft + 8 + "px", // centrada
+          top: li.offsetHeight - 2 + "px",
+        });
+      } else {
+        // Vertical en desktop
+        setIndicatorStyle({
+          width: "2px",
+          height: li.offsetHeight + "px",
+          left: "0",
+          top: li.offsetTop + "px",
+        });
+      }
+    };
+
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [activeCategory]);
 
   return (
     <section>
@@ -22,10 +58,13 @@ function Skills() {
         </p>
       </div>
 
-      <div className=" font-main flex flex-col md:flex-row gap-8 pt-8">
+      <div className="font-main flex flex-col md:flex-row gap-8 pt-8">
         {/* Categorías */}
         <div className="relative">
-          <ul className="flex md:flex-col border-l-2 border-gray-300 dark:border-gray-700">
+          <ul
+            ref={listRef}
+            className="flex md:flex-col border-t-2 md:border-l-2 border-gray-300 dark:border-gray-700 relative"
+          >
             {Object.keys(skills).map((category) => (
               <li
                 key={category}
@@ -41,15 +80,16 @@ function Skills() {
               </li>
             ))}
 
-            {/* Indicador lateral */}
+            {/* Indicador horizontal (solo móvil) */}
             <span
-              className="absolute left-0 w-[2px] bg-primary-light dark:bg-primary-dark transition-all duration-300 ease-in-out"
-              style={{
-                top: `${
-                  Object.keys(skills).indexOf(activeCategory) * 40
-                }px`, // depende del alto del li
-                height: "40px",
-              }}
+              className="absolute bg-primary-light dark:bg-primary-dark transition-all duration-300 ease-in-out md:hidden"
+              style={indicatorStyle}
+            />
+
+            {/* Indicador vertical (solo desktop) */}
+            <span
+              className="absolute bg-primary-light dark:bg-primary-dark transition-all duration-300 ease-in-out hidden md:block"
+              style={indicatorStyle}
             />
           </ul>
         </div>
@@ -74,7 +114,7 @@ function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Skills
+export default Skills;
