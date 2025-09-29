@@ -11,7 +11,7 @@ Showcases my academic and personal projects, skills, and contact information. In
 ## ⚙️ Technologies Used
 
 - **Frontend:** React ⚛️, JavaScript ES6+
-- **Styling:** CSS 🎨 (Dark/Light theme)
+- **Styling:** Tailwind 🎨 (Dark/Light theme)
 - **Internationalization:** i18next 🌍
 - **Icons:** react-icons (Fa)
 
@@ -43,19 +43,19 @@ Showcases my academic and personal projects, skills, and contact information. In
 ### MAIN INTERFACE
 
 ####
-![Im_LightMode](Images/im2.png)
+![Im_LightMode](images/im2.png)
 
 ####
-![Im_DarkMode](Images/im1.png)
+![Im_DarkMode](images/im1.png)
 
 ####
-![Im1](Images/im3.png)
+![Im1](images/im3.png)
 
 ####
-![Im2](Images/im4.png)
+![Im2](images/im4.png)
 
 ####
-![Im3](Images/im5.png)
+![Im3](images/im5.png)
 
 
 ##  License
