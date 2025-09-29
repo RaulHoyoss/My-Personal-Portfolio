@@ -61,9 +61,9 @@ function About() {
 
               {/* Imagen */}
               <img
-                src="/personal_photo.jpg"
+                src="/Face_image.jpg"
                 alt="Foto de Raul Hoyos"
-                className="relative w-full h-full object-cover rounded-lg shadow-lg
+                className=" relative w-full h-full object-cover rounded-lg shadow-lg
                            transform transition-transform duration-300 ease-out 
                            group-hover:translate-x-1 group-hover:translate-y-1"
               />
